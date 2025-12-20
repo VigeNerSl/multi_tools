@@ -442,7 +442,7 @@ footer {
         <span data-en="JSON Encrypt" data-ru="JSON Шифрование">JSON Encrypt</span>
         <button class="paste-btn" onclick="pasteToInput('jsonEncInput')" data-en="Paste" data-ru="Вставить">Paste</button>
       </div>
-      <textarea id="jsonEncInput" data-en='{"key": "value"}' data-ru='{"ключ": "значение"}' placeholder='{"key": "value"}'></textarea>
+      <textarea id="jsonEncInput" data-en='Paste JSON to encrypt...' data-ru='Вставьте JSON для шифрования...' placeholder='Paste JSON to encrypt...'></textarea>
       <button class="button" onclick="jsonEncrypt()" data-en="Encrypt JSON" data-ru="Зашифровать JSON">Encrypt JSON</button>
       <div class="result-container" id="jsonEncContainer">
         <div class="result-header">
@@ -458,7 +458,7 @@ footer {
         <span data-en="JSON Decrypt" data-ru="JSON Расшифровка">JSON Decrypt</span>
         <button class="paste-btn" onclick="pasteToInput('jsonDecInput')" data-en="Paste" data-ru="Вставить">Paste</button>
       </div>
-      <textarea id="jsonDecInput" placeholder='{"key": "\u0076\u0061\u006c\u0075\u0065"}'></textarea>
+      <textarea id="jsonDecInput" data-en='Paste encrypted JSON...' data-ru='Вставьте зашифрованный JSON...' placeholder='Paste encrypted JSON...'></textarea>
       <button class="button" onclick="jsonDecrypt()" data-en="Decrypt JSON" data-ru="Расшифровать JSON">Decrypt JSON</button>
       <div class="result-container" id="jsonDecContainer">
         <div class="result-header">
@@ -474,7 +474,7 @@ footer {
         <span data-en="JS Obfuscate" data-ru="JS Обфускация">JS Obfuscate</span>
         <button class="paste-btn" onclick="pasteToInput('jsObfInput')" data-en="Paste" data-ru="Вставить">Paste</button>
       </div>
-      <textarea id="jsObfInput" data-en="console.log('Hello World');" data-ru="console.log('Привет мир');" placeholder="console.log('Hello World');"></textarea>
+      <textarea id="jsObfInput" data-en="Paste code to obfuscate..." data-ru="Вставьте код для обфускации..." placeholder="Paste code to obfuscate..."></textarea>
       <button class="button" onclick="jsObfuscate()" data-en="Obfuscate Code" data-ru="Обфусцировать код">Obfuscate Code</button>
       <div class="result-container" id="jsObfContainer">
         <div class="result-header">
