@@ -668,6 +668,7 @@ function encodeCharsToUnicode(s) {
 }
 
 function jsonEncrypt() {
+  alert("encrypt clicked");
   const txt = document.getElementById('jsonEncInput').value;
   if (!txt) {
     const errMsg = currentLang === 'en' ? 'Error: Input is empty' : 'Ошибка: Поле ввода пусто';
