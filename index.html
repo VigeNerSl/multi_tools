@@ -825,15 +825,6 @@ function jsDeobfuscate() {
   }
 }
 </script>
-<script>
-window.onerror = function (msg, src, line, col, err) {
-  alert(
-    "JS ERROR:\n" +
-    msg + "\n" +
-    "line: " + line + "\n" +
-    (err ? err.stack : "")
-  );
-};
-</script>
+  
 </body>
 </html>
