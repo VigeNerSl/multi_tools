@@ -2017,50 +2017,6 @@ window.app = {
   },
   
   async jsDeobfuscate() {
-    if (!state.access || Date.now() > state.expiry) {
-      const msg = state.lang === 'en' ? 'Access required' : 'Требуется доступ';
-      alert(msg);
-      this.showAccessModal();
-      return;
-    }
-    
-    const input = document.getElementById('jsDeobfInput').value.trim();
-    
-    if (!input) {
-      const err = state.lang === 'en' ? 'Error: Input is empty' : 'Ошибка: Поле ввода пусто';
-      this.showResult('jsDeobfContainer', 'jsDeobfResult', err, true);
-      return;
-    }
-    
-    try {
-      if (typeof prettier === 'undefined') {
-        throw new Error('Prettier library not loaded');
-      }
-      
-      let deobf = input;
-      deobf = deobf.replace(/\\x([0-9a-fA-F]{2})/g, (m, hex) => String.fromCharCode(parseInt(hex, 16)));
-      deobf = deobf.replace(/\\u([0-9a-fA-F]{4})/g, (m, hex) => String.fromCharCode(parseInt(hex, 16)));
-      
-      const result = await prettier.format(deobf, {
-        parser: 'babel',
-        plugins: prettierPlugins,
-        printWidth: 80,
-        tabWidth: 2,
-        useTabs: false,
-        semi: true,
-        singleQuote: true,
-        trailingComma: 'es5',
-        bracketSpacing: true,
-        arrowParens: 'always'
-      });
-      
-      saveInput('jsDeobfInput', input);
-      this.showResult('jsDeobfContainer', 'jsDeobfResult', note + result);
-      incrementStat('jsDeobf');
-    } catch (e) {
-      const err = state.lang === 'en' ? 'Error: ' + e.message : 'Ошибка: ' + e.message;
-      this.showResult('jsDeobfContainer', 'jsDeobfResult', err, true);
-    }
   },
   
   async codeMinify() {
